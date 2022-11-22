@@ -81,7 +81,7 @@ function getLastEntityData() {
 
         title.innerHTML = last_entity.percentage + '%';
         progress.value = last_entity.percentage;
-        subtitle.innerHTML = "The most identifiable entity is " + last_entity.most_significant_detection + " with " + last_entity.most_significant_area;
+        subtitle.innerHTML = "The most identifiable entity is " + last_entity.most_significant_detection + " with " + last_entity.most_significant_area + " pixels covered.";
         image.src = last_entity.image
     })
 
