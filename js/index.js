@@ -29,6 +29,7 @@ function getUUID() {
     // check if uuid cookie exists
     if (document.cookie.split(';').filter((item) => item.includes('uuid=')).length) {
         uuid = document.cookie.split('; ').find(row => row.startsWith('uuid')).split('=')[1];
+        refreshDashboardLink()
         return;
     }
     // "uuid" get parameter
@@ -129,5 +130,7 @@ function resetUUID()
     // Refresh
     window.location.reload();
 }
-
-getUUID()
+// Run function if document is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    getUUID();
+});
