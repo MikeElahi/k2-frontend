@@ -94,5 +94,5 @@ getEntitiesData().then(() => {
     getLastEntityData()
 });
 
-document.getElementById('return-link').href = "index.html?uuid=" + getUUID();
+document.getElementById('return-link').href = "camera.html?uuid=" + getUUID();
 

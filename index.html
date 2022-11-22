@@ -2,38 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Take a Photo</title>
-    <link rel="stylesheet" href="css/reset.css?v=1.0">
-    <link rel="stylesheet" href="css/index.css?v=1.0">
-
+    <title>خوش‌آمدید</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300&display=swap" rel="stylesheet">
+<!--    <link rel="stylesheet" href="css/reset.css?v=1.0">-->
+    <style>
+        html {
+            direction: rtl;
+            font-family: 'Vazirmatn', sans-serif !important;
+        }
+
+        body {
+            text-align: justify;
+            background-color: #232323;
+            color: white;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        a {
+            color: darkorange;
+            text-decoration: none;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-<div class="container">
-    <div class="top-notice">
-        <canvas id="canvas"></canvas>
-        <p id="top-text">
-            <span id="variable-text">Scan a Wall </span>
-            <span id="existing-only" style="display: none">
-                <a href="dashboard.html" id="link-to-dashboard">Visit the Dashboard</a>
-                <span> or </span>
-                <a href="#" id="reset-cookie">Reset</a>
-            </span>
-
+    <div class="container">
+        <h1 style="display: inline">خوش‌آمدید</h1> <a href="/camera.html">(پرش به نرم‌افزار)</a>
+        <p>
+            این برنامه نمونه‌ای از اعمال هوش‌مصنوعی بر مشکلات تخصصی است. در این مورد خاص، اپلیکیشن پیش‌روی شما نمونه‌ای از
+            هوش‌مصنوعی آموزش دیده بر پایه مجموعه داده COCO-Stuff است.
         </p>
+        <p>
+            به دلایل محدودیت‌های فنی و زمانی، اپلیکیشن پیشِ روی شما از واحد پردازش مرکزی (CPU) به جای واحد پردازش گرافیکی (GPU)
+            بهره می‌برد. به دلیل تفاوت کارکرد سخت‌افزارها و بازدهی بالاتر GPU، در تدوین تحقیق از GPU استفاده شده است.
+            سرعت میانگین پاسخگویی در آزمایش‌های انجام شده به طور متوسط کمتر از ۳۰ ثانیه بود، با این حال، با توجه به سخت‌افزار
+            ضعیف‌تر بک‌اند پیش‌روی شما، ممکن است ثبت تصاویر بین ۱ تا ۲ دقیقه زمان ببرند.
+        </p>
+        <p>
+            پس از ثبت اولین تصویر، یک پیوند با عنوان «Visit the Dashboard» در بالای صفحه نمایان می‌شود.
+            با کلیک بر روی آن، شما به صفحه داشبورد اپلیکیشن منتقل می‌شوید که در آن، آخرین تصویر گرفته شده و توزیع تشخیص هوش‌مصنوعی نمایش داده می‌شود.
+            در نسخه پیش‌روی شما، اولین نسخه هوش‌مصنوعی مورد استفاده ما قرار گرفته است که فاقد تکنیک‌های اضافی همچون «تشخیص عمق» و سایر تکنیک‌های پردازش تصویر است.
+        </p>
+        <p>
+            در بخش دیگری از داشبورد، شما نموداری را بر پایه «پیشرفت بر حسب زمان» خواهید دید.
+            در نسخه فعلی هوش‌مصنوعی، سناریوی اساسی به شکل زیر است:
+        </p>
+        <ol>
+            <li>مهندس ساختمان در ابتدای شروع توسعه یک دیوار، از محیط ساختمانی عکس‌برداری می‌کند</li>
+            <li>پس از گذشت مدت قابل‌توجهی، در زمانی که پیشرفت «دیوار» قابل ملاحظه‌ باشد، مهندس دوباره از دیوار عکس‌برداری می‌کند.</li>
+            <li>سامانه داده‌های ذخیره‌شده در دو نقطه زمانی را مقایسه کرده و بر پایه میزان تشخیص «دیوار» در تصویر عددی را بر مبنای درصد ارائه می‌کند</li>
+            <li>پیشرفت خطی یک دیوار پس از ثبت چندین تصویر با درصد پیشرفت متفاوت، قابل ملاحظه و قابل پیش‌بینی است</li>
+        </ol>
+        <p>
+            لازم است ذکر شود که در نمونه‌اولیه فوق، تمامی داده‌ها بلااستثنا جمع‌اوری‌شده و نمایش داده می‌شوند. فلذا احتمال
+            نمایش پیشرفت منفی در این نمونه وجود دارد.
+        </p>
+        <p>
+            با توجه به اینکه فناوری‌های تشخیص عمق و ادراک عمیق‌تر در این نمونه توسعه داده نشده است، احتمال اشتباه هوش‌مصنوعی و حساسیت آن
+            به تغییر زاویه میان عکس‌ها وجود دارد.
+        </p>
+        <p>
+            در هر زمان می‌توانید با کلیک بر روی پیوند Reset، فرایند ثبت پیشرفت دیوار را از ابتدا آغاز کنید.
+        </p>
+        <h2><a href="camera.html">شروع به عکاسی کنید</a></h2>
     </div>
-    <video></video>
-    <div class="btn-bg"></div>
-    <div class="btn-container">
-        <button onclick="capturePhoto()"></button>
-    </div>
-</div>
-</body>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="js/index.js"></script>
 
+</body>
 </html>

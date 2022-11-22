@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{Chart.js, axios, chartjs-plugin-colorschemes}" />
+    <file url="PROJECT" libraries="{Chart.js, axios, bootstrap, chartjs-plugin-colorschemes}" />
   </component>
 </project>

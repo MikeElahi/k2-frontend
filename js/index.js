@@ -65,7 +65,7 @@ function capturePhoto() {
 
     [canvas.width, canvas.height] = [video.videoWidth, video.videoHeight];
     context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-    variable_text.innerHTML = "Photo taken. Sending Photo...";
+    variable_text.innerHTML = "Processing... (~1-2 minutes)";
 
     let percentage = null;
     const dataURL = canvas.toDataURL("image/jpeg", 1.0);
@@ -89,7 +89,7 @@ function send_request(dataURL, percentage)
         image: dataURL,
         percentage: percentage,
     }).then(function () {
-        variable_text.innerHTML = "Photo sent.";
+        variable_text.innerHTML = "Photo processed.";
         existing_only.style.display = 'inline';
     }).catch(function () {
         variable_text.innerHTML = "Photo failed to send.";
