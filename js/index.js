@@ -30,6 +30,7 @@ function getUUID() {
     if (sessionStorage.getItem('uuid') !== null) {
         uuid = sessionStorage.getItem('uuid');
         refreshDashboardLink();
+        existing_only.style.display = 'inline';
         return;
     }
 
@@ -50,6 +51,10 @@ function getUUID() {
 
         }).catch(function (error) {
             alert("Failed to obtain UUID, Data cannot be saved.");
+            // Wait for 5 seconds and refresh
+            setTimeout(function () {
+                location.reload();
+            }   , 5000);
         })
     }
 }
