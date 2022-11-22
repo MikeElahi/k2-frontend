@@ -1,0 +1,85 @@
+body {
+    background-color: #232323;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+p, a {
+    color: white;
+    text-decoration-thickness: 1px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+#latest-photo {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.charts {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.chart {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.ch1 {
+    margin-bottom: 3rem;
+}
+
+/* Different height for ch1 for mobile phones */
+@media only screen and (max-width: 600px) {
+    .ch1 {
+        height: 35vh;
+    }
+}
+
+.basic-information {
+    text-align: center;
+}
+
+.title, .section-title {
+    font-size: 4rem;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+}
+.title {
+    font-style: italic;
+}
+.subtitle {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+progress {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+progress::-webkit-progress-bar {background-color: lightgray; width: 100%;border:none; border-radius: 9999px;}
+progress::-webkit-progress-value {background-color: darkorange !important; border: none; border-radius: 9999px}
+
+.light-bg {
+    background-color: #272727;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

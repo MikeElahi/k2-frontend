@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/reset.css?v=1.0">
+    <link rel="stylesheet" href="css/dashboard.css?v=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="section latest-photo light-bg">
+        <h2 class="section-title">Latest Photo</h2>
+        <img id="latest-photo" alt="Latest Photo">
+    </div>
+    <div class="section charts">
+        <h2 class="section-title">Detection Ranges</h2>
+        <div class="chart ch1">
+            <canvas id="chart1"></canvas>
+        </div>
+        <h2 class="section-title">Progress Over Time</h2>
+        <div class="chart ch2">
+            <canvas id="chart2"></canvas>
+        </div>
+    </div>
+    <div class="section basic-information light-bg">
+        <progress max="100" id="progress"></progress>
+        <h1 class="title" id="title">Loading...</h1>
+        <h2 class="subtitle" id="subtitle">This shouldn't take longer than a minute, if it does, refresh the page.</h2>
+    </div>
+    <div class="section footer">
+        <p><a href="index.html" id="return-link">Take Another Photo</a></p>
+    </div>
+
+</div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.js"
+        integrity="sha512-gQhCDsnnnUfaRzD8k1L5llCCV6O9HN09zClIzzeJ8OJ9MpGmIlCxm+pdCkqTwqJ4JcjbojFr79rl2F1mzcoLMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
+<script src="js/dashboard.js"></script>
+</html>

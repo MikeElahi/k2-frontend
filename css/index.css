@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+    display: flex;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    color: white;
+    text-decoration-thickness: 1px;
+}
+
+video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+}
+canvas {
+    display: none;
+}
+
+.btn-container {
+    position: relative;
+    z-index: 1;
+}
+
+.top-notice {
+    position: absolute;
+    width: 100vw;
+    min-height: 10vh;
+    line-height: 10vh;
+    font-size: large;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.btn-container {
+    position: fixed;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    margin: 0 auto;
+}
+.btn-bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 auto;
+    width: 100vw;
+    height: 20vh;
+}
+button {
+    height: 10vh;
+    width: 10vh;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+}
