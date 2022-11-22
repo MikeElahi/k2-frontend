@@ -120,7 +120,7 @@ function eraseCookie(name) {
     document.cookie = name+'=; Max-Age=-99999999;';
 }
 
-function reset()
+function resetUUID()
 {
     uuid = '';
     eraseCookie('uuid');
