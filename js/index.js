@@ -29,6 +29,7 @@ function getUUID() {
     // check if uuid cookie exists
     if (document.cookie.split(';').filter((item) => item.includes('uuid=')).length) {
         uuid = document.cookie.split('; ').find(row => row.startsWith('uuid')).split('=')[1];
+        return;
     }
     // "uuid" get parameter
     let urlParams = new URLSearchParams(window.location.search);
