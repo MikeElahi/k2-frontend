@@ -26,12 +26,13 @@ let uuid = '';
 const existing_only = document.getElementById("existing-only");
 
 function getUUID() {
-    // check if uuid cookie exists
-    if (document.cookie.split(';').filter((item) => item.includes('uuid=')).length) {
-        uuid = document.cookie.split('; ').find(row => row.startsWith('uuid')).split('=')[1];
-        refreshDashboardLink()
+    // check if uuid exists in sessionStorage
+    if (sessionStorage.getItem('uuid') !== null) {
+        uuid = sessionStorage.getItem('uuid');
+        refreshDashboardLink();
         return;
     }
+
     // "uuid" get parameter
     let urlParams = new URLSearchParams(window.location.search);
     // Check if uuid is in url
@@ -44,7 +45,7 @@ function getUUID() {
         axios.get(PATH + '/uuid').then(function (response) {
             uuid = response.data;
             // Set uuid cookie with indefinite expiry
-            document.cookie = "uuid=" + uuid + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            sessionStorage.setItem("uuid", uuid);
             refreshDashboardLink()
 
         }).catch(function (error) {
@@ -118,14 +119,10 @@ function removeURLParameter(url, parameter) {
     return url;
 }
 
-function eraseCookie(name) {
-    document.cookie = name+'=; Max-Age=-99999999;';
-}
-
 function resetUUID()
 {
     uuid = '';
-    eraseCookie('uuid');
+    sessionStorage.removeItem('uuid');
     window.location.href = removeURLParameter(window.location.href, 'uuid');
     // Refresh
     window.location.reload();
